@@ -7,12 +7,12 @@ interface SearchBarProps {
     value: string;
 }
 
-export const SearchBar = ({className, submitAction}: SearchBarProps) => {
+export const SearchBar = ({className, submitAction, onChange, value}: SearchBarProps) => {
     return (
         <div className={className}>
             <form onSubmit={submitAction}>
                 <div className="flex-input">
-                    <input type="text"></input>
+                    <input onChange={onChange} value={value} type="text"></input>
                 </div>
             </form>
         </div>

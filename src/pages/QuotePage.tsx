@@ -32,6 +32,7 @@ export const QuotePage = () => {
     const search = (event:SyntheticEvent<HTMLInputElement>) => {
         setHasSearched(true);
         event.preventDefault()
+        console.log(searchTerm)
         fetch(`https://api.quotable.io/search/quotes?query=${searchTerm.replaceAll(' ','&')}=author`)
             .then(res => res.json())
             .then((json) => setSearchResults(json));

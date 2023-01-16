@@ -14,10 +14,10 @@ interface QuoteList {
 
 export const QuoteList = ({quotes}: QuoteListProps) => {
     const list = quotes.results.map( (quote:QuoteAPI) => {
-        <Quote quote_body={quote.content} quote_author={quote.author}/>
+        return <Quote key={quote._id} quote_body={quote.content} quote_author={quote.author}/>
     }
     );
     return (
-        <div className="quotesDiv">list</div>
+        <div className="quotesDiv">{list}</div>
     );
 }
