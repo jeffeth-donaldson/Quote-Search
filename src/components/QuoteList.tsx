@@ -2,13 +2,13 @@ import { Quote } from "./Quote";
 import { QuoteAPI } from "./Quote";
 
 interface QuoteListProps {
-    quotes: QuoteList; //TODO: need to get a specific type for this
+    quotes: QuoteList; 
 }
 
 interface QuoteList {
-    count: number;
-    lastItemIndex: number;
-    page: number;
+    count?: number;
+    lastItemIndex?: number;
+    page?: number;
     results: Array<QuoteAPI>;
 }
 

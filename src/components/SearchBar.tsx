@@ -1,8 +1,10 @@
-import { FormEventHandler } from "react";
+import { ChangeEventHandler, FormEventHandler } from "react";
 
 interface SearchBarProps {
     className: string;
     submitAction: FormEventHandler;
+    onChange: ChangeEventHandler;
+    value: string;
 }
 
 export const SearchBar = ({className, submitAction}: SearchBarProps) => {
