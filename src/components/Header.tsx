@@ -3,7 +3,9 @@ interface HeaderProps {
 }
 
 export const Header = ({message="Quote Search"}: HeaderProps) => {
-    return (
-        <h1>{message}</h1>
-    )
+    if (message == "Quote Search") {
+        return (<h1>{message}</h1>)
+    } else {
+        return (<h2>{message}</h2>)
+    }
 }

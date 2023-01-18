@@ -17,9 +17,9 @@ export interface QuoteAPI {
 
 export const Quote = ({is_main=false, quote_body, quote_author}: QuoteProps) => {
     return (
-        <div className={is_main ? "quote" : "mainQuote"}>
-            <p className="quote_body">{quote_body}</p>
-            <p className="quote_author">{quote_author}</p>
+        <div className={is_main ? "mainQuote" : "quote"}>
+            <p className="quote_body">"{quote_body}"</p>
+            <p className="quote_author">-{quote_author}</p>
         </div>
     )
 }

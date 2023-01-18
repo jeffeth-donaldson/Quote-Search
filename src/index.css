@@ -68,3 +68,57 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Manually added CSS */
+
+div.mainQuote, div.quote {
+  background-color: #323a33;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  margin: 0.4em; 
+}
+
+p.quote_body {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+p.quote_author {
+  font-size: 1em;
+  text-align: left;
+}
+
+div.mainQuote>p.quote_body {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+div.mainQuote>p.quote_author {
+  font-size: 1.1em;
+  text-align: left;
+}
+
+div.Search {
+  background-color: #262e26;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+.searchBar {
+  margin-left:auto;
+  margin-right:auto;
+  /* width: 130%; */
+}
+
+h2 {
+  text-align: left;
+}
+
+.searchButton {
+  margin-left: 100%;
+}
+
+table.Search {
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -4,6 +4,7 @@ import { ChangeEvent, FormEvent, SyntheticEvent, useEffect, useState } from 'rea
 import { Quote } from "../components/Quote";
 import { QuoteAPI } from "../components/Quote";
 import { QuoteList } from "../components/QuoteList";
+import { SearchButton } from "../components/SearchButton";
 
 export const QuotePage = () => {
     const [hasSearched, setHasSearched] = useState(false);
@@ -19,6 +20,7 @@ export const QuotePage = () => {
         length: "",
     });
     const [searchTerm, setSearchTerm] = useState("");
+    const [searchedTerm, setSearchedTerm] = useState("");
     const [searchResults, setSearchResults] = useState({results:[]});
     useEffect( () => {
         if (!hasLoaded) {
@@ -31,8 +33,9 @@ export const QuotePage = () => {
     const updateSearchTerm = (e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
     const search = (event:SyntheticEvent<HTMLInputElement>) => {
         setHasSearched(true);
-        event.preventDefault()
-        console.log(searchTerm)
+        setSearchedTerm(searchTerm);
+        event.preventDefault();
+        console.log(searchTerm);
         fetch(`https://api.quotable.io/search/quotes?query=${searchTerm.replaceAll(' ','&')}=author`)
             .then(res => res.json())
             .then((json) => setSearchResults(json));
@@ -42,7 +45,7 @@ export const QuotePage = () => {
         return (
             <main>
                 <SearchBar className="Search" value={searchTerm} onChange={updateSearchTerm} submitAction={search} />
-                <Header/>
+                <Header message={`Results of: "${searchedTerm}"`}/>
                 <QuoteList quotes={searchResults} />
             </main>
         )
