@@ -23,13 +23,11 @@ export const QuotePage = () => {
     const [searchedTerm, setSearchedTerm] = useState("");
     const [searchResults, setSearchResults] = useState({results:[]});
     useEffect( () => {
-        if (!hasLoaded) {
-            setHasLoaded(true);
             fetch("https://api.quotable.io/random")
                 .then(res => res.json())
                 .then((json) => setMainQuote(json));
-        }
-    });
+        }, []
+        );
     const updateSearchTerm = (e: ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value);
     const search = (event:SyntheticEvent<HTMLInputElement>) => {
         setHasSearched(true);
