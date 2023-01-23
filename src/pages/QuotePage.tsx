@@ -34,7 +34,7 @@ export const QuotePage = () => {
         setSearchedTerm(searchTerm);
         event.preventDefault();
         console.log(searchTerm);
-        fetch(`https://usu-quotes-mimic.vercel.app/search/quotes?query=${searchTerm.replaceAll(' ','&')}=author`)
+        fetch(`https://usu-quotes-mimic.vercel.app/api/search?query=${searchTerm.replaceAll(' ','&')}=author`)
             .then(res => res.json())
             .then((json) => setSearchResults(json));
     }
